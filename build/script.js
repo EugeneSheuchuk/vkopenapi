@@ -10,6 +10,7 @@ const getPostsBtn = document.getElementById('gPosts');
 authBtn.addEventListener('click', function () {
     VK.Auth.login(function(response) {
         console.log('response ', response);
+        console.log('response.user ', response.user);
         userId = response.user.id;
     }, 270338);
 });
