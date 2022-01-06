@@ -26,7 +26,7 @@ searchRepostBtn.addEventListener('click', function() {
     console.log('Get Reposts ');
     const postId = +document.getElementById('postId').value;
     console.log('postId ', postId);
-    VK.Api.call('wall.getReposts', { owner_id: userId, v:"5.131", getReposts: postId }, function(r) {
+    VK.Api.call('wall.getReposts', { owner_id: userId, v:"5.131", post_id: postId }, function(r) {
         console.log('R', r);
     });
 });
