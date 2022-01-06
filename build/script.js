@@ -15,7 +15,7 @@ authBtn.addEventListener('click', function () {
 });
 
 getPostsBtn.addEventListener('click', function() {
-    VK.Api.call('wall.get', { owner_id: userId, v:"5.73" }, function(r) {
+    VK.Api.call('wall.get', { owner_id: userId, v:"5.131" }, function(r) {
         console.log('R', r);
     });
 });
