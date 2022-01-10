@@ -45,3 +45,15 @@ window.fbAsyncInit = function() {
 };
 
 console.log('FB ', FB);
+
+const faceAuthBtn = document.getElementById('faceAuth');
+faceAuthBtn.addEventListener('click', function () {
+    FB.login(function(response) {
+        console.log('Facebook response ', response);
+        if (response.authResponse) {
+            console.log('Facebook response.authResponse ', response.authResponse);
+        } else {
+            console.log('User cancelled login or did not fully authorize.');
+        }
+    }, {scope: 'email,user_likes'});
+});
