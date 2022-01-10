@@ -55,7 +55,7 @@ faceAuthBtn.addEventListener('click', function () {
         if (response.authResponse) {
             console.log('Facebook response.authResponse ', response.authResponse);
             facebookUserId = response.authResponse.userID;
-            console.log('facebookUserId ', response.authResponse);
+            console.log('facebookUserId ', facebookUserId);
         } else {
             console.log('User cancelled login or did not fully authorize.');
         }
