@@ -51,6 +51,7 @@ console.log('FB ', FB);
 
 const faceAuthBtn = document.getElementById('faceAuth');
 const getFacebookPostsBtn = document.getElementById('getFacebookPosts');
+const facebookSearchRepostBtn = document.getElementById('facebookSearchRepost');
 
 faceAuthBtn.addEventListener('click', function () {
     FB.login(function(response) {
@@ -67,8 +68,14 @@ faceAuthBtn.addEventListener('click', function () {
 });
 
 getFacebookPostsBtn.addEventListener('click', function () {
-    //FB.api(`/${getFacebookPostsBtn}/posts`, {access_token : facebookAccessToken}, function(response) {
     FB.api(`/me/posts`, {access_token : facebookAccessToken}, function(response) {
         console.log('getFacebookPostsBtn response ', response);
+    });
+});
+
+facebookSearchRepostBtn.addEventListener('click', function () {
+    const postId = document.getElementById('facebookPostId').value;
+    FB.api(`${postId}/sharedposts`, {access_token : facebookAccessToken}, function(response) {
+        console.log('facebookSearchRepostBtn response ', response);
     });
 });
