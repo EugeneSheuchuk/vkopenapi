@@ -49,6 +49,8 @@ window.fbAsyncInit = function() {
 console.log('FB ', FB);
 
 const faceAuthBtn = document.getElementById('faceAuth');
+const getFacebookPostsBtn = document.getElementById('getFacebookPosts');
+
 faceAuthBtn.addEventListener('click', function () {
     FB.login(function(response) {
         console.log('Facebook response ', response);
@@ -60,4 +62,10 @@ faceAuthBtn.addEventListener('click', function () {
             console.log('User cancelled login or did not fully authorize.');
         }
     }, {scope: 'user_posts,email,public_profile'});
+});
+
+getFacebookPostsBtn.addEventListener('click', function () {
+    FB.api(`/${getFacebookPostsBtn}/posts`, function(response) {
+        console.log('getFacebookPostsBtn response ', response);
+    });
 });
