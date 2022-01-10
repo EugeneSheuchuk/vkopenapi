@@ -35,6 +35,8 @@ searchRepostBtn.addEventListener('click', function() {
 
 //// Facebook JS SDK
 
+let facebookUserId;
+
 window.fbAsyncInit = function() {
     FB.init({
         appId            : 600483301017617,
@@ -52,6 +54,8 @@ faceAuthBtn.addEventListener('click', function () {
         console.log('Facebook response ', response);
         if (response.authResponse) {
             console.log('Facebook response.authResponse ', response.authResponse);
+            facebookUserId = response.authResponse.userID;
+            console.log('facebookUserId ', response.authResponse);
         } else {
             console.log('User cancelled login or did not fully authorize.');
         }
