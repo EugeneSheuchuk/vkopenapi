@@ -36,6 +36,7 @@ searchRepostBtn.addEventListener('click', function() {
 //// Facebook JS SDK
 
 let facebookUserId;
+let facebookAccessToken;
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -57,6 +58,7 @@ faceAuthBtn.addEventListener('click', function () {
         if (response.authResponse) {
             console.log('Facebook response.authResponse ', response.authResponse);
             facebookUserId = response.authResponse.userID;
+            facebookAccessToken = response.authResponse.accessToken;
             console.log('facebookUserId ', facebookUserId);
         } else {
             console.log('User cancelled login or did not fully authorize.');
@@ -65,7 +67,7 @@ faceAuthBtn.addEventListener('click', function () {
 });
 
 getFacebookPostsBtn.addEventListener('click', function () {
-    FB.api(`/${getFacebookPostsBtn}/posts`, function(response) {
+    FB.api(`/${getFacebookPostsBtn}/posts`, {access_token : facebookAccessToken}, function(response) {
         console.log('getFacebookPostsBtn response ', response);
     });
 });
