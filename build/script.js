@@ -55,5 +55,5 @@ faceAuthBtn.addEventListener('click', function () {
         } else {
             console.log('User cancelled login or did not fully authorize.');
         }
-    }, {scope: 'email,user_likes'});
+    }, {scope: 'user_posts,email,public_profile'});
 });
