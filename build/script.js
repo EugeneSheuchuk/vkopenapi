@@ -1,3 +1,5 @@
+//// VK open API
+
 console.log('VK ', VK);
 
 let userId;
@@ -30,3 +32,16 @@ searchRepostBtn.addEventListener('click', function() {
         console.log('R', r);
     });
 });
+
+//// Facebook JS SDK
+
+window.fbAsyncInit = function() {
+    FB.init({
+        appId            : 600483301017617,
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v12.0'
+    });
+};
+
+console.log('FB ', FB);
