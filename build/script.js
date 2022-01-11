@@ -54,6 +54,7 @@ console.log('FB ', FB);
 
 const faceAuthBtn = document.getElementById('faceAuth');
 const getFacebookPostsBtn = document.getElementById('getFacebookPosts');
+const getFacebookPermissionsBtn = document.getElementById('getFacebookPermissions');
 const facebookSearchRepostBtn = document.getElementById('facebookSearchRepost');
 
 faceAuthBtn.addEventListener('click', function () {
@@ -68,6 +69,12 @@ faceAuthBtn.addEventListener('click', function () {
             console.log('User cancelled login or did not fully authorize.');
         }
     }, {scope: 'user_posts,email,public_profile'});
+});
+
+getFacebookPermissionsBtn.addEventListener('click', function () {
+    FB.api(`${facebookUserId}/permissions`, {access_token : facebookAccessToken}, function(response) {
+        console.log('getFacebookPermissionsBtn response ', response);
+    });
 });
 
 getFacebookPostsBtn.addEventListener('click', function () {
