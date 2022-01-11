@@ -60,17 +60,28 @@ const getFacebookPermissionsBtn = document.getElementById('getFacebookPermission
 const facebookSearchRepostBtn = document.getElementById('facebookSearchRepost');
 
 faceAuthBtn.addEventListener('click', function () {
-    FB.login(function(response) {
-        console.log('Facebook response ', response);
-        if (response.authResponse) {
-            console.log('Facebook response.authResponse ', response.authResponse);
-            facebookUserId = response.authResponse.userID;
-            facebookAccessToken = response.authResponse.accessToken;
-            console.log('facebookUserId ', facebookUserId);
-        } else {
-            console.log('User cancelled login or did not fully authorize.');
-        }
-    }, {scope: 'user_posts,email,public_profile', return_scopes: true});
+    // FB.login(function(response) {
+    //     console.log('Facebook response ', response);
+    //     if (response.authResponse) {
+    //         console.log('Facebook response.authResponse ', response.authResponse);
+    //         facebookUserId = response.authResponse.userID;
+    //         facebookAccessToken = response.authResponse.accessToken;
+    //         console.log('facebookUserId ', facebookUserId);
+    //     } else {
+    //         console.log('User cancelled login or did not fully authorize.');
+    //     }
+    // }, {scope: 'user_posts,email,public_profile', return_scopes: true});
+
+    FB.init({
+        //appId            : 600483301017617,
+        appId            : 629658518237499,
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v12.0'
+    }, function (resp) {
+        console.log('resp ', resp);
+    });
+
 });
 
 getFacebookPermissionsBtn.addEventListener('click', function () {
