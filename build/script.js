@@ -40,11 +40,14 @@ let facebookAccessToken;
 
 window.fbAsyncInit = function() {
     FB.init({
-        appId            : 600483301017617,
+        //appId            : 600483301017617,
+        appId            : 629658518237499,
         autoLogAppEvents : true,
         xfbml            : true,
         version          : 'v12.0'
     });
+
+    FB.AppEvents.logPageView();
 };
 
 console.log('FB ', FB);
