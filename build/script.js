@@ -45,6 +45,8 @@ window.fbAsyncInit = function() {
         autoLogAppEvents : true,
         xfbml            : true,
         version          : 'v12.0'
+    }, function (resp) {
+        console.log('resp ', resp);
     });
 
     //FB.AppEvents.logPageView();
