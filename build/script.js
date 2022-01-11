@@ -71,12 +71,12 @@ faceAuthBtn.addEventListener('click', function () {
 });
 
 getFacebookPostsBtn.addEventListener('click', function () {
-    // FB.api(`/me/posts`, {access_token : facebookAccessToken}, function(response) {
-    //     console.log('getFacebookPostsBtn response ', response);
-    // });
-    FB.api(`${facebookUserId}/posts`, {access_token : facebookAccessToken}, function(response) {
+    FB.api(`/me/posts`, {access_token : facebookAccessToken}, function(response) {
         console.log('getFacebookPostsBtn response ', response);
     });
+    // FB.api(`${facebookUserId}/posts`, {access_token : facebookAccessToken}, function(response) {
+    //     console.log('getFacebookPostsBtn response ', response);
+    // });
 });
 
 facebookSearchRepostBtn.addEventListener('click', function () {
