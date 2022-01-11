@@ -47,7 +47,7 @@ window.fbAsyncInit = function() {
         version          : 'v12.0'
     });
 
-    FB.AppEvents.logPageView();
+    //FB.AppEvents.logPageView();
 };
 
 console.log('FB ', FB);
