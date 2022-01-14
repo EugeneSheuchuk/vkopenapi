@@ -37,7 +37,7 @@ searchRepostBtn.addEventListener('click', function() {
 getURLPostBtn.addEventListener('click', function() {
     console.log('Get Posts ');
     const link = document.getElementById('postURL').value;
-    const postId = link.slice(link.indexOf('wall'));
+    const postId = link.slice(link.indexOf('wall') + 4);
     console.log('postId ', postId);
     // VK.Api.call('wall.getReposts', { owner_id: userId, v:"5.131", post_id: postId }, function(r) {
     //     console.log('R', r);
