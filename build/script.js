@@ -39,9 +39,9 @@ getURLPostBtn.addEventListener('click', function() {
     const link = document.getElementById('postURL').value;
     const postId = link.slice(link.indexOf('wall') + 4);
     console.log('postId ', postId);
-    // VK.Api.call('wall.getReposts', { owner_id: userId, v:"5.131", post_id: postId }, function(r) {
-    //     console.log('R', r);
-    // });
+    VK.Api.call('wall.getById', { posts: postId, v:"5.131" }, function(res) {
+        console.log('Response ', res);
+    });
 });
 
 //// Facebook JS SDK
