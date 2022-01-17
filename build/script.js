@@ -42,7 +42,7 @@ getURLPostBtn.addEventListener('click', function() {
     console.log('postId ', postId);
     VK.Api.call('wall.getById', { posts: postId, v:"5.131" }, function(res) {
         console.log('Response ', res);
-        const videoData = res[0].attachments[0];
+        const videoData = res.response[0].attachments[0];
         console.log('videoData ', videoData);
     });
 });
