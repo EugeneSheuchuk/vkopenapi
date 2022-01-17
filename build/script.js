@@ -42,8 +42,11 @@ getURLPostBtn.addEventListener('click', function() {
     console.log('postId ', postId);
     VK.Api.call('wall.getById', { posts: postId, v:"5.131" }, function(res) {
         console.log('Response ', res);
-        const videoData = res.response[0].attachments[0];
+        const videoData = res?.response[0]?.attachments[0]?.video;
         console.log('videoData ', videoData);
+        VK.Api.call('video.get', { videos: `${videoData.owner_id}_${videoData.id}`, v:"5.131" }, function(videoRes) {
+            console.log('videoRes ', videoRes);
+        });
     });
 });
 
