@@ -15,8 +15,9 @@ authBtn.addEventListener('click', function () {
     VK.Auth.login(function(response) {
         console.log('response ', response);
         userId = response.session.user.id;
-    }, 270338);
+    }, 270354); // friends(2), video(16), wall(8192), groups(262144)
 });
+
 
 getPostsBtn.addEventListener('click', function() {
     console.log('Get Posts ');
@@ -41,6 +42,8 @@ getURLPostBtn.addEventListener('click', function() {
     console.log('postId ', postId);
     VK.Api.call('wall.getById', { posts: postId, v:"5.131" }, function(res) {
         console.log('Response ', res);
+        const videoData = res[0].attachments[0];
+        console.log('videoData ', videoData);
     });
 });
 
