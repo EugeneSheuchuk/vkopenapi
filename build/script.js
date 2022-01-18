@@ -122,7 +122,7 @@ const okAuthBtn = document.getElementById('okAuth');
 
 let rParams = FAPI.Util.getRequestParameters();
 console.log('rParams ', rParams);
-okAuthBtn.addEventListener('clic', function() {
+okAuthBtn.addEventListener('click', function() {
     FAPI.init(rParams["api_server"], rParams["apiconnection"],
 
         function() {
