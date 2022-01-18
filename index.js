@@ -8,7 +8,7 @@ if (port == null || port == "") {
 
 app.use(express.static('build'));
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
     //res.send('Hello World!')
     res.sendFile('./build/index.html');
 })

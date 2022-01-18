@@ -116,23 +116,19 @@ facebookSearchRepostBtn.addEventListener('click', function () {
 
 //// Ok JS SDK
 
-console.log('FAPI ', FAPI);
+console.log('OKSDK ', OKSDK);
 
 const okAuthBtn = document.getElementById('okAuth');
 
-let rParams = FAPI.Util.getRequestParameters();
-console.log('rParams ', rParams);
 okAuthBtn.addEventListener('click', function() {
-    FAPI.init(rParams["api_server"], rParams["apiconnection"],
-
-        function() {
-            console.log("Инициализация прошла успешно");
-            // здесь можно вызывать методы API
-        },
-
-        function(error) {
-            console.log("Ошибка инициализации ", error);
-        }
-    );
+    const config = {
+        app_id: 512000980948, // id приложения
+        app_key: 'CFNIPDKGDIHBABABA' // публичный ключ приложения
+    };
+    OKSDK.init(config, function() {
+        console.log('Success');
+    }, function() {
+        console.log('Error')
+    });
 });
 
