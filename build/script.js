@@ -112,3 +112,27 @@ facebookSearchRepostBtn.addEventListener('click', function () {
         console.log('facebookSearchRepostBtn response ', response);
     });
 });
+
+
+//// Ok JS SDK
+
+console.log('FAPI ', FAPI);
+
+const okAuthBtn = document.getElementById('okAuth');
+
+let rParams = FAPI.Util.getRequestParameters();
+console.log('rParams ', rParams);
+okAuthBtn.addEventListener('clic', function() {
+    FAPI.init(rParams["api_server"], rParams["apiconnection"],
+
+        function() {
+            console.log("Инициализация прошла успешно");
+            // здесь можно вызывать методы API
+        },
+
+        function(error) {
+            console.log("Ошибка инициализации ", error);
+        }
+    );
+});
+
