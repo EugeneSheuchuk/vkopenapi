@@ -127,6 +127,18 @@ okAuthBtn.addEventListener('click', function() {
     };
     OKSDK.init(config, function() {
         console.log('Success');
+        OKSDK.REST.call(
+            "mediatopic.getByIds",
+            {
+                        "topic_ids": "154288026513516",
+                        "fields": "media_topic"
+                    },
+            function (status, data, error) {
+                console.log('status ', status);
+                console.log('data ', data);
+                console.log('error ', error);
+            }
+        );
     }, function() {
         console.log('Error')
     });
