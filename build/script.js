@@ -131,7 +131,7 @@ okAuthBtn.addEventListener('click', function() {
             "mediatopic.getByIds",
             {
                         "topic_ids": "154288026513516",
-                        "fields": "attachment_movie.URL,attachment_movie.HD_NO_CROP_THUMBNAIL_URL,attachment_movie.THUMBNAIL_URL,attachment_movie.SMALL_THUMBNAIL_URL,attachment_movie.URL_PROVIDER,media_topic.MEDIA_URL,media_topic.MEDIA"
+                        "fields": "media_topic.MEDIA_URL,attachment_movie.URL,attachment_movie.HD_NO_CROP_THUMBNAIL_URL,attachment_movie.THUMBNAIL_URL,attachment_movie.SMALL_THUMBNAIL_URL,attachment_movie.URL_PROVIDER,media_topic.MEDIA_URL,media_topic.MEDIA"
                     },
             function (status, data, error) {
                 console.log('status ', status);
