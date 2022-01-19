@@ -131,7 +131,7 @@ okAuthBtn.addEventListener('click', function() {
             "mediatopic.getByIds",
             {
                         "topic_ids": "154288026513516",
-                        "fields": "media_topic"
+                        "fields": "attachment_movie"
                     },
             function (status, data, error) {
                 console.log('status ', status);
