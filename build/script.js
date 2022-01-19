@@ -127,11 +127,24 @@ okAuthBtn.addEventListener('click', function() {
     };
     OKSDK.init(config, function() {
         console.log('Success');
+        // OKSDK.REST.call(
+        //     "mediatopic.getByIds",
+        //     {
+        //                 "topic_ids": "154288026513516",
+        //                 "fields": "video.OWNER_ID,attachment_movie.AUTHOR_REF,media_topic.MEDIA_URL,attachment_movie.URL,attachment_movie.HD_NO_CROP_THUMBNAIL_URL,attachment_movie.THUMBNAIL_URL,attachment_movie.SMALL_THUMBNAIL_URL,attachment_movie.URL_PROVIDER,media_topic.MEDIA_URL,media_topic.MEDIA,video.URL"
+        //             },
+        //     function (status, data, error) {
+        //         console.log('status ', status);
+        //         console.log('data ', data);
+        //         console.log('error ', error);
+        //     }
+        // );
+
+
         OKSDK.REST.call(
-            "mediatopic.getByIds",
+            "url.getInfo",
             {
-                        "topic_ids": "154288026513516",
-                        "fields": "video.OWNER_ID,attachment_movie.AUTHOR_REF,media_topic.MEDIA_URL,attachment_movie.URL,attachment_movie.HD_NO_CROP_THUMBNAIL_URL,attachment_movie.THUMBNAIL_URL,attachment_movie.SMALL_THUMBNAIL_URL,attachment_movie.URL_PROVIDER,media_topic.MEDIA_URL,media_topic.MEDIA,video.URL"
+                        "url": "https://ok.ru/profile/68282463084/statuses/154288026513516",
                     },
             function (status, data, error) {
                 console.log('status ', status);
