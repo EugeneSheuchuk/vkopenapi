@@ -72,9 +72,10 @@ window.fbAsyncInit = function() {
 console.log('FB ', FB);
 
 const faceAuthBtn = document.getElementById('faceAuth');
-const getFacebookPostsBtn = document.getElementById('getFacebookPosts');
-const getFacebookPermissionsBtn = document.getElementById('getFacebookPermissions');
-const facebookSearchRepostBtn = document.getElementById('facebookSearchRepost');
+// const getFacebookPostsBtn = document.getElementById('getFacebookPosts');
+// const getFacebookPermissionsBtn = document.getElementById('getFacebookPermissions');
+// const facebookSearchRepostBtn = document.getElementById('facebookSearchRepost');
+const facebookSearchPostBtn = document.getElementById('facebookSearchPost');
 
 faceAuthBtn.addEventListener('click', function () {
     FB.login(function(response) {
@@ -91,25 +92,32 @@ faceAuthBtn.addEventListener('click', function () {
 
 });
 
-getFacebookPermissionsBtn.addEventListener('click', function () {
-    FB.api(`${facebookUserId}/permissions`, {access_token : facebookAccessToken}, function(response) {
-        console.log('getFacebookPermissionsBtn response ', response);
-    });
-});
+// getFacebookPermissionsBtn.addEventListener('click', function () {
+//     FB.api(`${facebookUserId}/permissions`, {access_token : facebookAccessToken}, function(response) {
+//         console.log('getFacebookPermissionsBtn response ', response);
+//     });
+// });
+//
+// getFacebookPostsBtn.addEventListener('click', function () {
+//     FB.api(`${facebookUserId}/posts`, {access_token : facebookAccessToken}, function(response) {
+//         console.log('getFacebookPostsBtn response ', response);
+//     });
+//     // FB.api(`${facebookUserId}/posts`, {access_token : facebookAccessToken}, function(response) {
+//     //     console.log('getFacebookPostsBtn response ', response);
+//     // });
+// });
+//
+// facebookSearchRepostBtn.addEventListener('click', function () {
+//     const postId = document.getElementById('facebookPostId').value;
+//     FB.api(`${postId}/sharedposts`, {access_token : facebookAccessToken}, function(response) {
+//         console.log('facebookSearchRepostBtn response ', response);
+//     });
+// });
 
-getFacebookPostsBtn.addEventListener('click', function () {
-    FB.api(`${facebookUserId}/posts`, {access_token : facebookAccessToken}, function(response) {
-        console.log('getFacebookPostsBtn response ', response);
-    });
-    // FB.api(`${facebookUserId}/posts`, {access_token : facebookAccessToken}, function(response) {
-    //     console.log('getFacebookPostsBtn response ', response);
-    // });
-});
-
-facebookSearchRepostBtn.addEventListener('click', function () {
-    const postId = document.getElementById('facebookPostId').value;
-    FB.api(`${postId}/sharedposts`, {access_token : facebookAccessToken}, function(response) {
-        console.log('facebookSearchRepostBtn response ', response);
+facebookSearchPostBtn.addEventListener('click', function () {
+    const postId = document.getElementById('facebookIdPost').value;
+    FB.api(`${postId}`, {access_token : facebookAccessToken}, function(response) {
+        console.log('postInfo response ', response);
     });
 });
 
