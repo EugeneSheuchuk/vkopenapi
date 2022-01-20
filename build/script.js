@@ -56,6 +56,7 @@ let facebookUserId;
 let facebookAccessToken;
 
 window.fbAsyncInit = function() {
+    console.log('FB ', FB);
     FB.init({
         //appId            : 600483301017617,
         appId            : 629658518237499,
@@ -69,7 +70,7 @@ window.fbAsyncInit = function() {
     //FB.AppEvents.logPageView();
 };
 
-console.log('FB ', FB);
+
 
 const faceAuthBtn = document.getElementById('faceAuth');
 // const getFacebookPostsBtn = document.getElementById('getFacebookPosts');
