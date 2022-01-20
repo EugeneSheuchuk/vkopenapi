@@ -55,22 +55,31 @@ getURLPostBtn.addEventListener('click', function() {
 let facebookUserId;
 let facebookAccessToken;
 
-window.fbAsyncInit = function() {
-    console.log('FB ', FB);
-    FB.init({
-        //appId            : 600483301017617,
-        appId            : 629658518237499,
-        autoLogAppEvents : true,
-        xfbml            : true,
-        version          : 'v12.0'
-    }, function (resp) {
-        console.log('resp ', resp);
-    });
+// window.fbAsyncInit = function() {
+//     console.log('FB ', FB);
+//     FB.init({
+//         //appId            : 600483301017617,
+//         appId            : 629658518237499,
+//         autoLogAppEvents : true,
+//         xfbml            : true,
+//         version          : 'v12.0'
+//     }, function (resp) {
+//         console.log('resp ', resp);
+//     });
+//
+//     //FB.AppEvents.logPageView();
+// };
 
-    //FB.AppEvents.logPageView();
-};
-
-
+console.log('FB ', FB);
+FB.init({
+    //appId            : 600483301017617,
+    appId            : 629658518237499,
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v12.0'
+}, function (resp) {
+    console.log('resp ', resp);
+});
 
 const faceAuthBtn = document.getElementById('faceAuth');
 // const getFacebookPostsBtn = document.getElementById('getFacebookPosts');
